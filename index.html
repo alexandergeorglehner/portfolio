@@ -35,20 +35,43 @@
       text-decoration: none;
       color: black;
     }
+
+    #sound-toggle {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 12px;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
 
 <div class="video-container">
-  <iframe src="https://player.vimeo.com/video/1176309917?autoplay=1&muted=1&loop=1&background=1"
+  <iframe src="https://player.vimeo.com/video/1176309917?autoplay=1&muted=1&loop=1"
     frameborder="0"
     allow="autoplay; fullscreen">
   </iframe>
+  <div id="sound-toggle">Sound on</div>
 </div>
 
 <div class="footer">
   <a href="contact.html">Contact</a>
 </div>
+<script src="https://player.vimeo.com/api/player.js"></script>
 
+<script>
+  const iframe = document.querySelector("iframe");
+  const player = new Vimeo.Player(iframe);
+  const button = document.getElementById("sound-toggle");
+
+  button.onclick = function() {
+    player.setVolume(1);
+    player.setMuted(false);
+    button.style.display = "none";
+  };
+</script>
 </body>
 </html>
