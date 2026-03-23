@@ -27,19 +27,6 @@
       height: 100%;
     }
 
-    /* Sound Button */
-    #sound-toggle {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      color: white;
-      background: rgba(0,0,0,0.4);
-      padding: 8px 12px;
-      cursor: pointer;
-      font-size: 14px;
-      backdrop-filter: blur(5px);
-    }
-
     .footer {
       position: absolute;
       bottom: 20px;
@@ -58,32 +45,16 @@
 <div class="video-container">
 
   <iframe 
-    src="https://player.vimeo.com/video/1176343509?autoplay=1&muted=1&loop=1&playsinline=1&title=0&byline=0&portrait=0"
+    src="https://player.vimeo.com/video/1176343509?background=1&autoplay=1&loop=1"
     frameborder="0"
     allow="autoplay; fullscreen">
   </iframe>
-
-  <div id="sound-toggle">Sound on</div>
 
 </div>
 
 <div class="footer">
   <a href="contact.html">Contact</a>
 </div>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-<script>
-  const iframe = document.querySelector("iframe");
-  const player = new Vimeo.Player(iframe);
-  const button = document.getElementById("sound-toggle");
-
-  button.onclick = function() {
-    player.setMuted(false);
-    player.setVolume(1);
-    button.style.display = "none";
-  };
-</script>
 
 </body>
 </html>
