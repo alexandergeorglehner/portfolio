@@ -64,16 +64,15 @@
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 <script>
   const iframe = document.querySelector("iframe");
   const player = new Vimeo.Player(iframe);
-  const button = document.getElementById("sound-toggle");
 
-  button.onclick = function() {
-    player.setVolume(1);
-    player.setMuted(false);
-    button.style.display = "none";
-  };
+  document.body.addEventListener("click", function() {
+    player.play();
+  }, { once: true });
 </script>
 </body>
 </html>
